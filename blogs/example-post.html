@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- =====================================================================
+     BLOG POST TEMPLATE (placeholder)
+     1. Copy this file and give the copy a short name without spaces,
+        for example blogs/mpts-explained.html
+     2. In the copy, change the <title>, the description, the date, the
+        heading, the summary and the text of the post.
+     3. On the homepage (index.html), add an entry for the new post at the
+        top of the Blogs list (search for id="blog-list").
+     Images go in the images folder; link them as ../images/name.png
+     ===================================================================== -->
+<title>Title of the first blog post | Dr. Cheems Wang</title>
+<meta name="description" content="A one- or two-sentence summary of the post.">
+<meta name="author" content="Dr. Cheems Wang">
+<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<link rel="preload" href="../fonts/literata-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<!-- Equations (optional): remove the comment marks around the next line to write LaTeX. -->
+<!-- <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+</head>
+<body>
+<header class="post-top">
+  <div class="wrap post-top-inner">
+    <a class="home" href="../index.html">Dr. Cheems Wang</a>
+    <a href="../index.html#blogs">All posts</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="post">
+    <header>
+      <p class="post-meta"><time datetime="2026-10">October 2026</time></p>
+      <h1>Title of the first blog post</h1>
+      <p class="post-lede">A one- or two-sentence summary of the post. This page is a placeholder in the blogs folder of the repository; replace its text with your own.</p>
+    </header>
+
+    <div class="post-body">
+      <p>Write the post here. Each paragraph goes inside its own <code>&lt;p&gt;</code> element, and the page takes its fonts, colours and dark mode from the homepage automatically.</p>
+
+      <h2>A section heading</h2>
+      <p>Use headings to break a long post into parts. Link to papers such as <a href="https://www.nature.com/articles/s41467-026-74004-0">Model Predictive Task Sampling</a>, and use <strong>bold</strong> or <em>italic</em> text for emphasis.</p>
+      <ul>
+        <li>Lists work well for short points.</li>
+        <li>Keep one idea per item.</li>
+        <li>For a numbered list, use <code>&lt;ol&gt;</code> instead of <code>&lt;ul&gt;</code>.</li>
+      </ul>
+      <blockquote><p>A quotation, or the one sentence readers should remember from the post.</p></blockquote>
+
+      <h2>Code and figures</h2>
+      <p>Code keeps its spacing inside a <code>&lt;pre&gt;&lt;code&gt;</code> block:</p>
+      <pre><code>def adapt(model, task, steps=5):
+    for _ in range(steps):
+        loss = model.loss(task.support)
+        model.update(loss)
+    return model.evaluate(task.query)</code></pre>
+      <figure>
+        <div class="figure-placeholder"><p>Figure placeholder. Put the image in the images folder, then replace this box with<br><code>&lt;img src="../images/figure-name.png" alt="What the figure shows"&gt;</code></p></div>
+        <figcaption>Figure 1. A caption that says what the figure shows.</figcaption>
+      </figure>
+
+      <h2>Equations</h2>
+      <p>To write LaTeX, remove the comment marks around the MathJax line near the top of this file. Then put inline maths between <code>\(</code> and <code>\)</code>, and displayed equations between <code>$$</code> and <code>$$</code>.</p>
+    </div>
+  </article>
+
+  <footer class="post-end">
+    <p><a href="../index.html">Dr. Cheems Wang</a>, Tsinghua University. <a href="../index.html#blogs">Back to all posts</a></p>
+  </footer>
+</main>
+</body>
+</html>
