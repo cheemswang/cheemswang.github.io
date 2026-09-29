@@ -17,6 +17,19 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preload" href="fonts/literata-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Blog language switch (EN / 中文), styled like the publications filter */
+  .post-langs { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.75rem; margin-top: 0.45rem; font: 500 0.8125rem/1.4 var(--sans); }
+  .lang-switch { display: inline-flex; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; }
+  .lang-switch button { padding: 0.2rem 0.65rem; border: 0; background: none; color: var(--muted); font: inherit; cursor: pointer; }
+  .lang-switch button + button { border-left: 1px solid var(--rule); }
+  .lang-switch button[aria-pressed="true"] { background: var(--tint); color: var(--ink); font-weight: 600; }
+  .lang-switch button:hover { color: var(--ink); }
+  .lang-switch button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .lang-tag { color: var(--muted); }
+  .no-js .lang-switch { display: none; }
+  .js .lang-fallback { display: none; }
+</style>
 <script>document.documentElement.className = 'js';</script>
 <script src="main.js" defer></script>
 <script type="application/ld+json">
@@ -382,6 +395,14 @@
       <h3 class="pub-year">2026</h3>
       <ol class="rows pubs">
         <li class="pub">
+          <span class="when venue">arXiv preprint</span>
+          <div>
+            <a class="pub-title" href="https://arxiv.org/abs/2609.33609">You Only Edit Once: Incentivizing In-Context Capability of LLMs via Local Demonstration Refinement</a>
+            <p class="authors">J. Wen*, <b>Cheems Wang</b>*, Y. Qu, Y. Mao, H. Zou, H. Chi, L. Cai, Y. Lv, K. Zhang, Y. Jiang, X. Ji</p>
+            <p class="pub-links"><a href="https://arxiv.org/abs/2609.33609">arXiv</a> <a href="blogs/jev-lde-blog.html">Blog</a> <a href="blogs/jev-lde-blog-zh.html" lang="zh-CN">博客</a></p>
+          </div>
+        </li>
+        <li class="pub">
           <span class="when venue">NeurIPS</span>
           <div>
             <a class="pub-title" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Mvbvv3IAAAAJ&amp;citation_for_view=Mvbvv3IAAAAJ:m44aUaJR3ikC">Bridging Risk Approximation Gaps in Model Predictive Task Sampling via In-Context Modeling</a>
@@ -394,7 +415,7 @@
           <div>
             <a class="pub-title" href="https://arxiv.org/abs/2606.11119">TRACE: A Unified Rollout Budget Allocation Framework for Efficient Agentic Reinforcement Learning</a>
             <p class="authors">H. Zou, <b>Cheems Wang</b>*, Y. Qu, Y. Jiang, L. Cai, Y. Mao, R. Peng, X. Xu, W. Liu, K. Yang, S. Yang, X. Ji*</p>
-            <p class="pub-links"><a href="https://arxiv.org/abs/2606.11119">arXiv</a></p>
+            <p class="pub-links"><a href="https://arxiv.org/abs/2606.11119">arXiv</a> <a href="blogs/trace-blog.html">Blog</a> <a href="blogs/trace-blog-zh.html" lang="zh-CN">博客</a></p>
           </div>
         </li>
         <li class="pub">
@@ -402,6 +423,7 @@
           <div>
             <a class="pub-title" href="https://arxiv.org/abs/2606.01281">RLVR without Ineffective Samples: Group Prioritized Off-Policy Optimization for LLM Reasoning</a>
             <p class="authors">Y. Mao, Y. Qu, <b>Cheems Wang</b>*, H. Zou, X. Ji*</p>
+            <p class="pub-links"><a href="https://arxiv.org/abs/2606.01281">arXiv</a> <a href="blogs/popo-blog.html">Blog</a> <a href="blogs/popo-blog-zh.html" lang="zh-CN">博客</a></p>
           </div>
         </li>
         <li class="pub is-selected">
@@ -410,7 +432,7 @@
           <div>
             <a class="pub-title" href="https://arxiv.org/abs/2605.06139">Listwise Policy Optimization: Group-based RLVR as Target-Projection on the LLM Response Simplex</a>
             <p class="authors">Y. Qu, <b>Cheems Wang</b>*, Y. Mao, H. Zou, Y. Jiang, Y. Li, W. Xu, L. Cai, W. Liu, C. Bai, K. Yang, Y. Chen, S. Yang, X. Ji</p>
-            <p class="pub-links"><a href="https://arxiv.org/abs/2605.06139">arXiv</a></p>
+            <p class="pub-links"><a href="https://arxiv.org/abs/2605.06139">arXiv</a> <a href="blogs/lpo_blog.html">Blog</a> <a href="blogs/lpo_blog_zh.html" lang="zh-CN">博客</a></p>
           </div>
         </li>
         <li class="pub">
@@ -447,7 +469,7 @@
           <div>
             <a class="pub-title" href="https://www.nature.com/articles/s41467-026-74004-0">Model Predictive Task Sampling for Efficient and Robust Adaptation</a>
             <p class="authors"><b>Cheems Wang</b>*, Z. Xiao*, Y. Mao*, Y. Qu*, J. Shen, Y. Lv, X. Ji</p>
-            <p class="pub-links"><a href="https://www.nature.com/articles/s41467-026-74004-0">Nature Communications</a> <a href="https://github.com/thu-rllab/MPTS">Code</a></p>
+            <p class="pub-links"><a href="https://www.nature.com/articles/s41467-026-74004-0">Nature Communications</a> <a href="https://github.com/thu-rllab/MPTS">Code</a> <a href="blogs/MPTS_article_zh.html" lang="zh-CN">博客</a></p>
           </div>
         </li>
         <li class="pub">
@@ -762,16 +784,87 @@
             (for example blogs/mpts-explained.html) and write the post in it.
          2. Copy one <li>…</li> below, paste it at the TOP of the list and
             change the date, title, summary and link.
+            For a post with English and Chinese versions, copy a <li> that has
+            the EN / 中文 switch and fill in both language blocks.
        Newest first. The page shows the first 5 posts; change data-show="5" to show more.
        ======================================================================= -->
   <section id="blogs" aria-labelledby="blogs-title">
     <h2 id="blogs-title">Blogs</h2>
     <ol class="rows posts" id="blog-list" data-show="5" data-noun="posts">
       <li>
-        <time class="when" datetime="2026-10">Oct 2026</time>
+        <time class="when" datetime="2026-09">Sep 2026</time>
+        <div class="post-bilingual">
+          <div lang="en" data-lang="en">
+            <a class="post-title" href="blogs/jev-lde-blog.html">You Only Edit Once: A Tiny System-1 Editor That Makes LLMs Better In-Context Learners</a>
+            <p class="post-summary">In-context learning lives or dies by its examples. Jev-LDE, a 1.7B editor trained with RL, glances at the retrieved demonstrations and makes a single Keep, Delete or Replace move, lifting average one-shot accuracy from 81.2% to 88.1% with just one call to the target LLM.</p>
+          </div>
+          <div lang="zh-CN" data-lang="zh" hidden>
+            <a class="post-title" href="blogs/jev-lde-blog-zh.html">你只需编辑一次：用小巧的“系统 1”，让大语言模型更会上下文学习</a>
+            <p class="post-summary">上下文学习的成败取决于示例。Jev-LDE 是一个经强化学习训练的 1.7B 编辑器，只需对检索到的示例做一次保留、删除或替换，就能把 one-shot 平均准确率从 81.2% 提升到 88.1%，且只调用目标大语言模型一次。</p>
+          </div>
+          <p class="post-langs">
+            <span class="lang-switch" role="group" aria-label="Blog language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="zh" aria-pressed="false" lang="zh-CN">中文</button></span>
+            <a class="lang-fallback" href="blogs/jev-lde-blog-zh.html" lang="zh-CN">中文版</a>
+          </p>
+        </div>
+      </li>
+      <li>
+        <time class="when" datetime="2026-06">Jun 2026</time>
+        <div class="post-bilingual">
+          <div lang="en" data-lang="en">
+            <a class="post-title" href="blogs/trace-blog.html">Branch Where It Counts: Spending Agentic RL Rollouts Where the Outcome Is Still Undecided</a>
+            <p class="post-summary">Outcome-only RL learns nothing from rollouts that all succeed or all fail. TRACE replays multi-turn agents from the turns most likely to split into success and failure, getting more signal from the same budget: up to +2.8 points over GRPO on Qwen3-14B multi-hop QA (EMNLP 2026).</p>
+          </div>
+          <div lang="zh-CN" data-lang="zh" hidden>
+            <a class="post-title" href="blogs/trace-blog-zh.html">在关键处分叉：把智能体强化学习的 rollout 预算花在结果未定之处</a>
+            <p class="post-summary">仅基于结果的强化学习，无法从全部成功或全部失败的 rollout 中学到任何东西。TRACE 从最可能分化出成败的轮次重放多轮智能体轨迹，同样的预算换来更多对比信号：在 Qwen3-14B 多跳问答上比 GRPO 最多高出 2.8 个百分点（EMNLP 2026）。</p>
+          </div>
+          <p class="post-langs">
+            <span class="lang-switch" role="group" aria-label="Blog language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="zh" aria-pressed="false" lang="zh-CN">中文</button></span>
+            <a class="lang-fallback" href="blogs/trace-blog-zh.html" lang="zh-CN">中文版</a>
+          </p>
+        </div>
+      </li>
+      <li>
+        <time class="when" datetime="2026-06">Jun 2026</time>
+        <div class="post-bilingual">
+          <div lang="en" data-lang="en">
+            <a class="post-title" href="blogs/lpo_blog.html">Your GRPO Is Secretly Chasing a Target: Listwise Policy Optimization Aims Right at It</a>
+            <p class="post-summary">GRPO, Dr.GRPO and MaxRL all quietly step toward a reward-weighted target on the response simplex. LPO computes that target in closed form and projects onto it exactly, making gradients bounded, zero-sum and self-correcting at no extra compute (NeurIPS 2026).</p>
+          </div>
+          <div lang="zh-CN" data-lang="zh" hidden>
+            <a class="post-title" href="blogs/lpo_blog_zh.html">你的 GRPO 一直在悄悄追逐一个目标：列表式策略优化直接瞄准它</a>
+            <p class="post-summary">GRPO、Dr.GRPO 和 MaxRL 其实都在响应单纯形上悄悄迈向一个奖励加权的目标分布。LPO 以闭式解算出这个目标并精确投影过去，让梯度有界、零和且能自我校正，而且不增加额外算力（NeurIPS 2026）。</p>
+          </div>
+          <p class="post-langs">
+            <span class="lang-switch" role="group" aria-label="Blog language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="zh" aria-pressed="false" lang="zh-CN">中文</button></span>
+            <a class="lang-fallback" href="blogs/lpo_blog_zh.html" lang="zh-CN">中文版</a>
+          </p>
+        </div>
+      </li>
+      <li>
+        <time class="when" datetime="2026-06">Jun 2026</time>
+        <div class="post-bilingual">
+          <div lang="en" data-lang="en">
+            <a class="post-title" href="blogs/popo-blog.html">Stop Paying for Rollouts That Teach Nothing: RLVR Where Every Batch Counts</a>
+            <p class="post-summary">Half or more of a GRPO batch is often dead weight with zero gradient. POPO swaps those groups for recent useful ones from a tiny replay buffer, reaching DAPO-level accuracy with about 30% of its rollouts and half its runtime, and no extra samples.</p>
+          </div>
+          <div lang="zh-CN" data-lang="zh" hidden>
+            <a class="post-title" href="blogs/popo-blog-zh.html">别再为学不到东西的 rollout 买单：让 RLVR 的每个批次都有效</a>
+            <p class="post-summary">GRPO 的训练批次里，常有一半甚至更多是梯度为零的无效组。POPO 用一个极小回放缓冲区中最近的有效组替换它们，无需额外采样，就能用约 30% 的 rollout 和大约一半的运行时间达到 DAPO 的准确率。</p>
+          </div>
+          <p class="post-langs">
+            <span class="lang-switch" role="group" aria-label="Blog language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="zh" aria-pressed="false" lang="zh-CN">中文</button></span>
+            <a class="lang-fallback" href="blogs/popo-blog-zh.html" lang="zh-CN">中文版</a>
+          </p>
+        </div>
+      </li>
+      <li>
+        <time class="when" datetime="2026-06">Jun 2026</time>
         <div>
-          <a class="post-title" href="blogs/example-post.html">Title of the first blog post</a>
-          <p class="post-summary">Placeholder: one or two sentences about the post. This entry links to blogs/example-post.html; replace both with a real post.</p>
+          <a class="post-title" href="blogs/MPTS_article_zh.html" lang="zh-CN">让大模型和机器人“聪明地交互”：用模型预测任务采样破解训练的交互瓶颈</a>
+          <p class="post-summary">Training large models and embodied agents is bottlenecked less by raw compute than by costly interactions. This feature follows model predictive task sampling (MPTS), from Nature Communications to ICML, KDD and ICLR, as it learns which tasks are worth training on next.</p>
+          <p class="post-langs"><span class="lang-tag">In Chinese</span></p>
         </div>
       </li>
       <li>
@@ -782,6 +875,26 @@
         </div>
       </li>
     </ol>
+    <script>
+      /* EN / 中文 switch on bilingual blog posts */
+      (function () {
+        var posts = document.querySelectorAll('#blog-list .post-bilingual');
+        Array.prototype.forEach.call(posts, function (post) {
+          var buttons = post.querySelectorAll('.lang-switch button');
+          Array.prototype.forEach.call(buttons, function (button) {
+            button.addEventListener('click', function () {
+              var lang = button.getAttribute('data-lang');
+              Array.prototype.forEach.call(post.querySelectorAll('div[data-lang]'), function (block) {
+                block.hidden = block.getAttribute('data-lang') !== lang;
+              });
+              Array.prototype.forEach.call(buttons, function (b) {
+                b.setAttribute('aria-pressed', b === button ? 'true' : 'false');
+              });
+            });
+          });
+        });
+      })();
+    </script>
   </section>
 
   <!-- =============================== FUNDING ===============================
